@@ -1,0 +1,48 @@
+{
+  "type": "Program",
+  "declarations": [
+    "f"
+  ],
+  "references": [],
+  "children": [
+    {
+      "type": "FunctionDeclaration:f",
+      "declarations": [
+        "x"
+      ],
+      "references": [],
+      "children": [
+        {
+          "type": "FunctionExpression:g",
+          "declarations": [
+            "g"
+          ],
+          "references": [],
+          "children": [
+            {
+              "type": "BlockStatement",
+              "declarations": [
+                "y"
+              ],
+              "references": [
+                {
+                  "name": "y",
+                  "declaredAt": "Program > FunctionDeclaration:f > FunctionExpression:g > BlockStatement"
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "BlockStatement",
+          "declarations": [
+            "y"
+          ],
+          "references": [],
+          "children": []
+        }
+      ]
+    }
+  ]
+}
