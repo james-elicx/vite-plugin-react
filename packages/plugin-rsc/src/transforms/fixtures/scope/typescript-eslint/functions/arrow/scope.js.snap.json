@@ -13,15 +13,14 @@
   "children": [
     {
       "type": "ArrowFunction",
-      "declarations": [
-        "j"
-      ],
+      "declarations": [],
       "references": [],
       "children": [
         {
           "type": "BlockStatement",
           "declarations": [
-            "i"
+            "i",
+            "j"
           ],
           "references": [
             {

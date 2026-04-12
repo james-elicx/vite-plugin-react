@@ -18,11 +18,14 @@ export class Scope {
 
   constructor(
     public readonly parent: Scope | undefined,
-    private readonly isFunction: boolean,
+    // True for scopes that catch `var` declarations: function bodies and the
+    // module scope.  All other scopes (params, blocks, catch, for-heads,
+    // class expressions) are transparent to `var`.
+    private readonly isVarScope: boolean,
   ) {}
 
-  getNearestFunctionScope(): Scope {
-    return this.isFunction ? this : this.parent!.getNearestFunctionScope()
+  getNearestVarScope(): Scope {
+    return this.isVarScope ? this : this.parent!.getNearestVarScope()
   }
 
   getAncestorScopes(): Set<Scope> {
@@ -83,9 +86,12 @@ export function buildScopeTree(ast: Program): ScopeTree {
         if (node.type === 'FunctionDeclaration' && node.id) {
           current.declarations.add(node.id.name)
         }
-        // Param scope is separate from the body scope (BlockStatement below creates its own).
-        // This matches the JS spec: params have their own environment, the body has another.
-        const scope = new Scope(current, true)
+        // Param scope is not a var scope — `var` declarations in the body
+        // hoist past it to the body's own BlockStatement scope (which IS a
+        // var scope — see below).  Default parameter initializers are
+        // evaluated in this param scope, so they structurally cannot see
+        // body-scoped `var` declarations.
+        const scope = new Scope(current, false)
         nodeScope.set(node, scope)
         current = scope
         for (const param of node.params) {
@@ -112,7 +118,14 @@ export function buildScopeTree(ast: Program): ScopeTree {
         node.type === 'SwitchStatement' ||
         node.type === 'BlockStatement'
       ) {
-        const scope = new Scope(current, false)
+        // A BlockStatement that is a function body is a var scope —
+        // `getNearestVarScope()` returns it, keeping body `var`
+        // declarations separate from the parent param scope.
+        const isFunctionBody =
+          node.type === 'BlockStatement' &&
+          ancestors.length >= 2 &&
+          isFunctionNode(ancestors[ancestors.length - 2]!)
+        const scope = new Scope(current, isFunctionBody)
         nodeScope.set(node, scope)
         current = scope
       } else if (node.type === 'CatchClause') {
@@ -126,7 +139,7 @@ export function buildScopeTree(ast: Program): ScopeTree {
         }
       } else if (node.type === 'VariableDeclaration') {
         const target =
-          node.kind === 'var' ? current.getNearestFunctionScope() : current
+          node.kind === 'var' ? current.getNearestVarScope() : current
         for (const decl of node.declarations) {
           for (const name of extractNames(decl.id)) {
             target.declarations.add(name)
@@ -161,10 +174,6 @@ export function buildScopeTree(ast: Program): ScopeTree {
   const referenceToDeclaredScope = new Map<Identifier, Scope>()
 
   for (const { id, visitScope } of rawReferences) {
-    // TODO: default param expressions should not resolve to `var` declarations
-    // from the same function body. We currently start lookup at `visitScope`,
-    // so `function f(x = y) { var y }` incorrectly resolves `y` to `f`'s own
-    // function scope instead of continuing to the parent scope.
     let declScope: Scope | undefined = visitScope
     while (declScope && !declScope.declarations.has(id.name)) {
       declScope = declScope.parent

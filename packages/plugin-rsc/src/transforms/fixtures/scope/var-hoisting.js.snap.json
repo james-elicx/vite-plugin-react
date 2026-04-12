@@ -7,18 +7,18 @@
   "children": [
     {
       "type": "FunctionDeclaration:f",
-      "declarations": [
-        "x"
-      ],
+      "declarations": [],
       "references": [],
       "children": [
         {
           "type": "BlockStatement",
-          "declarations": [],
+          "declarations": [
+            "x"
+          ],
           "references": [
             {
               "name": "x",
-              "declaredAt": "Program > FunctionDeclaration:f"
+              "declaredAt": "Program > FunctionDeclaration:f > BlockStatement"
             }
           ],
           "children": [

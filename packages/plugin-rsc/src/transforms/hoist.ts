@@ -74,33 +74,75 @@ export function transformHoistInlineDirective(
           'anonymous_server_function'
 
         const bindVars = getBindVars(node, scopeTree)
+
+        // Arrow functions inherit `arguments` from the enclosing non-arrow
+        // function.  After hoisting to a regular function, `arguments`
+        // would refer to the hoisted function's own arguments.  Capture the
+        // original `arguments` as a bind var and rewrite references.
+        let argumentsBindVar: BindVar | undefined
+        if (node.type === 'ArrowFunctionExpression') {
+          const argumentsRefs = collectArgumentsReferences(node)
+          if (argumentsRefs.length > 0) {
+            argumentsBindVar = {
+              root: '$$hoist_arguments',
+              expr: 'arguments',
+            }
+            for (const ref of argumentsRefs) {
+              output.update(ref.start, ref.end, '$$hoist_arguments')
+            }
+          }
+        }
+
+        const allBindVars = argumentsBindVar
+          ? [...bindVars, argumentsBindVar]
+          : bindVars
+        const hasDefaultParams = node.params.some((p) =>
+          containsPattern(p, 'AssignmentPattern'),
+        )
         let newParams = [
-          ...bindVars.map((b) => b.root),
+          ...allBindVars.map((b) => b.root),
           ...node.params.map((n) => input.slice(n.start, n.end)),
         ].join(', ')
-        if (bindVars.length > 0 && options.decode) {
-          newParams = [
-            '$$hoist_encoded',
-            ...node.params.map((n) => input.slice(n.start, n.end)),
-          ].join(', ')
-          output.appendLeft(
-            node.body.body[0]!.start,
-            `const [${bindVars.map((b) => b.root).join(',')}] = ${options.decode(
+        if (allBindVars.length > 0 && options.decode) {
+          if (hasDefaultParams) {
+            // Default parameter initializers run before the function body,
+            // so decoded vars must be available at param evaluation time.
+            // We decode via a destructuring param default, which is
+            // evaluated left-to-right before the original params:
+            //   ($$enc, [a, b] = __dec($$enc), { x = a } = {}) => ...
+            newParams = [
               '$$hoist_encoded',
-            )};\n`,
-          )
+              `[${allBindVars.map((b) => b.root).join(', ')}] = ${options.decode(
+                '$$hoist_encoded',
+              )}`,
+              ...node.params.map((n) => input.slice(n.start, n.end)),
+            ].join(', ')
+          } else {
+            newParams = [
+              '$$hoist_encoded',
+              ...node.params.map((n) => input.slice(n.start, n.end)),
+            ].join(', ')
+            output.appendLeft(
+              node.body.body[0]!.start,
+              `const [${allBindVars.map((b) => b.root).join(',')}] = ${options.decode(
+                '$$hoist_encoded',
+              )};\n`,
+            )
+          }
         }
 
         // append a new `FunctionDeclaration` at the end
         const newName =
           `$$hoist_${names.length}` + (originalName ? `_${originalName}` : '')
         names.push(newName)
+        const isGenerator =
+          'generator' in node && (node as { generator?: boolean }).generator
         output.update(
           node.start,
           node.body.start,
           `\n;${options.noExport ? '' : 'export '}${
             node.async ? 'async ' : ''
-          }function ${newName}(${newParams}) `,
+          }function${isGenerator ? '*' : ''} ${newName}(${newParams}) `,
         )
         output.appendLeft(
           node.end,
@@ -111,14 +153,28 @@ export function transformHoistInlineDirective(
         output.move(node.start, node.end, input.length)
 
         // replace original declartion with action register + bind
+        // Arrow functions lexically inherit `this`.  When the hoisted arrow
+        // body uses `this`, we capture it via `.bind(this, ...)` so the
+        // converted regular function receives the correct `this` value.
+        const needsThisBind =
+          node.type === 'ArrowFunctionExpression' &&
+          containsThisExpression(node)
         let newCode = `/* #__PURE__ */ ${runtime(newName, newName, {
           directiveMatch: match,
         })}`
-        if (bindVars.length > 0) {
-          const bindArgs = options.encode
-            ? options.encode('[' + bindVars.map((b) => b.expr).join(', ') + ']')
-            : bindVars.map((b) => b.expr).join(', ')
-          newCode = `${newCode}.bind(null, ${bindArgs})`
+        if (allBindVars.length > 0 || needsThisBind) {
+          const bindTarget = needsThisBind ? 'this' : 'null'
+          const bindArgs =
+            allBindVars.length > 0
+              ? options.encode
+                ? options.encode(
+                    '[' + allBindVars.map((b) => b.expr).join(', ') + ']',
+                  )
+                : allBindVars.map((b) => b.expr).join(', ')
+              : ''
+          newCode = bindArgs
+            ? `${newCode}.bind(${bindTarget}, ${bindArgs})`
+            : `${newCode}.bind(${bindTarget})`
         }
         if (declName) {
           newCode = `const ${declName} = ${newCode};`
@@ -303,6 +359,74 @@ function synthesizePartialObject(root: string, bindPaths: BindPath[]): string {
   }
 
   return serialize(trie, [])
+}
+
+// Check whether an AST node (or any descendant) matches a given type.
+function containsPattern(node: Node, type: string): boolean {
+  let found = false
+  walk(node, {
+    enter(n) {
+      if (found) return this.skip()
+      if (n.type === type) {
+        found = true
+        return this.skip()
+      }
+    },
+  })
+  return found
+}
+
+// Collect positions of `arguments` Identifier references inside an arrow
+// function.  Stops at non-arrow functions (which have their own `arguments`)
+// but descends into nested arrows (which inherit `arguments` lexically).
+// Returns an empty array when there are no references.
+function collectArgumentsReferences(fn: Node): Identifier[] {
+  const refs: Identifier[] = []
+  walk(fn, {
+    enter(node, parent) {
+      if (
+        node !== fn &&
+        (node.type === 'FunctionDeclaration' ||
+          node.type === 'FunctionExpression')
+      ) {
+        return this.skip()
+      }
+      if (
+        node.type === 'Identifier' &&
+        node.name === 'arguments' &&
+        // Exclude declaration positions (e.g. `var arguments`)
+        !(parent?.type === 'VariableDeclarator' && parent.id === node)
+      ) {
+        refs.push(node)
+      }
+    },
+  })
+  return refs
+}
+
+// Check whether a function body contains `ThisExpression`.  Stops at nested
+// non-arrow functions (which have their own `this`) but descends into arrow
+// functions (which inherit `this` lexically).
+function containsThisExpression(fn: Node): boolean {
+  let found = false
+  walk(fn, {
+    enter(node) {
+      if (found) return this.skip()
+      if (node.type === 'ThisExpression') {
+        found = true
+        return this.skip()
+      }
+      // Non-arrow functions create their own `this` — don't descend.
+      if (
+        node !== fn &&
+        (node.type === 'FunctionDeclaration' ||
+          node.type === 'FunctionExpression')
+      ) {
+        return this.skip()
+      }
+    },
+  })
+  return found
 }
 
 // e.g.

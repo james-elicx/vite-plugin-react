@@ -23,20 +23,21 @@
     {
       "type": "FunctionExpression",
       "declarations": [
-        "c",
-        "d",
         "decorators",
         "desc",
-        "i",
         "key",
-        "r",
         "target"
       ],
       "references": [],
       "children": [
         {
           "type": "BlockStatement",
-          "declarations": [],
+          "declarations": [
+            "c",
+            "d",
+            "i",
+            "r"
+          ],
           "references": [
             {
               "name": "arguments",
@@ -44,7 +45,7 @@
             },
             {
               "name": "c",
-              "declaredAt": "Program > FunctionExpression"
+              "declaredAt": "Program > FunctionExpression > BlockStatement"
             },
             {
               "name": "target",
@@ -84,7 +85,7 @@
             },
             {
               "name": "r",
-              "declaredAt": "Program > FunctionExpression"
+              "declaredAt": "Program > FunctionExpression > BlockStatement"
             },
             {
               "name": "Reflect",
@@ -108,11 +109,11 @@
             },
             {
               "name": "c",
-              "declaredAt": "Program > FunctionExpression"
+              "declaredAt": "Program > FunctionExpression > BlockStatement"
             },
             {
               "name": "r",
-              "declaredAt": "Program > FunctionExpression"
+              "declaredAt": "Program > FunctionExpression > BlockStatement"
             },
             {
               "name": "Object",
@@ -128,11 +129,11 @@
             },
             {
               "name": "r",
-              "declaredAt": "Program > FunctionExpression"
+              "declaredAt": "Program > FunctionExpression > BlockStatement"
             },
             {
               "name": "r",
-              "declaredAt": "Program > FunctionExpression"
+              "declaredAt": "Program > FunctionExpression > BlockStatement"
             }
           ],
           "children": [
@@ -146,15 +147,15 @@
                 },
                 {
                   "name": "i",
-                  "declaredAt": "Program > FunctionExpression"
+                  "declaredAt": "Program > FunctionExpression > BlockStatement"
                 },
                 {
                   "name": "i",
-                  "declaredAt": "Program > FunctionExpression"
+                  "declaredAt": "Program > FunctionExpression > BlockStatement"
                 },
                 {
                   "name": "d",
-                  "declaredAt": "Program > FunctionExpression"
+                  "declaredAt": "Program > FunctionExpression > BlockStatement"
                 },
                 {
                   "name": "decorators",
@@ -162,31 +163,31 @@
                 },
                 {
                   "name": "i",
-                  "declaredAt": "Program > FunctionExpression"
+                  "declaredAt": "Program > FunctionExpression > BlockStatement"
                 },
                 {
                   "name": "r",
-                  "declaredAt": "Program > FunctionExpression"
+                  "declaredAt": "Program > FunctionExpression > BlockStatement"
                 },
                 {
                   "name": "c",
-                  "declaredAt": "Program > FunctionExpression"
+                  "declaredAt": "Program > FunctionExpression > BlockStatement"
                 },
                 {
                   "name": "d",
-                  "declaredAt": "Program > FunctionExpression"
+                  "declaredAt": "Program > FunctionExpression > BlockStatement"
                 },
                 {
                   "name": "r",
-                  "declaredAt": "Program > FunctionExpression"
+                  "declaredAt": "Program > FunctionExpression > BlockStatement"
                 },
                 {
                   "name": "c",
-                  "declaredAt": "Program > FunctionExpression"
+                  "declaredAt": "Program > FunctionExpression > BlockStatement"
                 },
                 {
                   "name": "d",
-                  "declaredAt": "Program > FunctionExpression"
+                  "declaredAt": "Program > FunctionExpression > BlockStatement"
                 },
                 {
                   "name": "target",
@@ -198,11 +199,11 @@
                 },
                 {
                   "name": "r",
-                  "declaredAt": "Program > FunctionExpression"
+                  "declaredAt": "Program > FunctionExpression > BlockStatement"
                 },
                 {
                   "name": "d",
-                  "declaredAt": "Program > FunctionExpression"
+                  "declaredAt": "Program > FunctionExpression > BlockStatement"
                 },
                 {
                   "name": "target",
@@ -214,7 +215,7 @@
                 },
                 {
                   "name": "r",
-                  "declaredAt": "Program > FunctionExpression"
+                  "declaredAt": "Program > FunctionExpression > BlockStatement"
                 }
               ],
               "children": []
