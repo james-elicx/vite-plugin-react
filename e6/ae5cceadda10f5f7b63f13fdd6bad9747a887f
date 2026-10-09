@@ -1,0 +1,21 @@
+packages/plugin-rsc/e2e/source-map.test.ts
+  s_80157c5ddc55e7::t_4962c343a0bd7e 1,3,227-262
+packages/plugin-rsc/src/plugin.ts
+  s_80157c5ddc55e7::t_5039286ec44332 2159-2167
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "e6ae5cceadda10f5f7b63f13fdd6bad9747a887f",
+  "prompts": {},
+  "sessions": {
+    "s_80157c5ddc55e7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "455e330d-6044-4ec7-b697-bd3ad3761f4f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "James <james@eli.cx>"
+    }
+  }
+}
