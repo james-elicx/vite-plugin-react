@@ -1,0 +1,21 @@
+packages/plugin-rsc/src/transforms/hoist.test.ts
+  s_14ee45131d590b::t_2dd74506cab1f0 177-205
+packages/plugin-rsc/src/transforms/hoist.ts
+  s_14ee45131d590b::t_bfd2d8c85e73fa 45-46,231-235
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "fdce6b8c38dba9199f887f659f4ea8146c0bb430",
+  "prompts": {},
+  "sessions": {
+    "s_14ee45131d590b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6aa6db70-194b-4478-940f-51bb2334e216",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "James <james@eli.cx>"
+    }
+  }
+}
