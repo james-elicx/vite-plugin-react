@@ -1,0 +1,33 @@
+packages/plugin-rsc/README.md
+  s_1cf391a3924eff::t_91039d8fc5f0b2 435-439
+packages/plugin-rsc/e2e/action-encryption-binding.test.ts
+  s_1cf391a3924eff::t_52426e57a188c7 1-194
+packages/plugin-rsc/src/plugin.ts
+  s_1cf391a3924eff::t_655e63a153fea5 208-220,2017,2083-2087,2095-2096,2099-2100
+packages/plugin-rsc/src/transforms/hoist.test.ts
+  s_1cf391a3924eff::t_e93baef6bef887 327-363
+packages/plugin-rsc/src/transforms/hoist.ts
+  s_1cf391a3924eff::t_0b9b1d9f105b1a 28-30,190-192,208,257-260
+packages/plugin-rsc/src/transforms/server-action.ts
+  s_1cf391a3924eff::t_96328505a46f1b 10-11
+packages/plugin-rsc/src/utils/encryption-runtime.ts
+  s_1cf391a3924eff::t_32f83946cd7606 17-19,22,29,35,39,45-61
+packages/plugin-rsc/src/utils/encryption-utils.ts
+  s_1cf391a3924eff::t_24b02b4bf74d94 87,94,105,114
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "cd02dad1dcfc60a5d47532e5fef74283348ea359",
+  "prompts": {},
+  "sessions": {
+    "s_1cf391a3924eff": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "405f2ab0-1438-47ee-bc9c-3bc352537511",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "James <james@eli.cx>"
+    }
+  }
+}

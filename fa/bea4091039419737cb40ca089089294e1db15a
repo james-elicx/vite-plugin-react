@@ -1,0 +1,23 @@
+packages/plugin-rsc/README.md
+  s_1cf391a3924eff::t_e498bd3a4652c0 435-436
+packages/plugin-rsc/src/plugin.ts
+  s_1cf391a3924eff::t_e5787a4512d4a3 209-210
+packages/plugin-rsc/src/utils/encryption-runtime.ts
+  s_1cf391a3924eff::t_3ca147664ca3e3 18-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "fabea4091039419737cb40ca089089294e1db15a",
+  "prompts": {},
+  "sessions": {
+    "s_1cf391a3924eff": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "405f2ab0-1438-47ee-bc9c-3bc352537511",
+        "model": "unknown"
+      },
+      "human_author": "James <james@eli.cx>"
+    }
+  }
+}
