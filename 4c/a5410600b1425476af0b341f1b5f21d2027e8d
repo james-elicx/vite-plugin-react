@@ -1,0 +1,21 @@
+packages/plugin-rsc/e2e/validate-imports.test.ts
+  s_6b9cb40ed81f7f::t_c64fde6b77e8eb 4,182-185,328-329,346-348,472-494,497-499
+packages/plugin-rsc/src/plugins/validate-import.ts
+  s_6b9cb40ed81f7f::t_2e163952b43b08 78-81,129,131-152,155-164
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "4ca5410600b1425476af0b341f1b5f21d2027e8d",
+  "prompts": {},
+  "sessions": {
+    "s_6b9cb40ed81f7f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "35300d44-6b3c-499b-8fcf-703a0d1cff03",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "James <james@eli.cx>"
+    }
+  }
+}
