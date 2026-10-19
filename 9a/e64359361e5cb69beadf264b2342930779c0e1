@@ -1,0 +1,29 @@
+packages/plugin-rsc/README.md
+  s_e0060c9ce67e67::t_ea0d58ca3a1e85 521-554
+packages/plugin-rsc/e2e/server-reference-callback.test.ts
+  s_e0060c9ce67e67::t_ef493eaf8c151e 1-136
+packages/plugin-rsc/src/core/rsc.ts
+  s_e0060c9ce67e67::t_e24025e7120542 100-104,118,186-198
+packages/plugin-rsc/src/react/rsc/server.node.ts
+  s_e0060c9ce67e67::t_daf66ba8619516 8,63-64,69,71-75,79-83,89,94
+packages/plugin-rsc/src/react/rsc/server.ts
+  s_e0060c9ce67e67::t_b66b5d5340921f 8,46-47,49-53,59,61-65
+packages/plugin-rsc/src/types/index.ts
+  s_e0060c9ce67e67::t_f1ffc047a260d9 1-2,144,151
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "9ae64359361e5cb69beadf264b2342930779c0e1",
+  "prompts": {},
+  "sessions": {
+    "s_e0060c9ce67e67": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0cffa9a9-a462-42e0-89db-679b857a8a2a",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "James <james@eli.cx>"
+    }
+  }
+}
