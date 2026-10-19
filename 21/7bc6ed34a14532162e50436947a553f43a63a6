@@ -1,0 +1,23 @@
+packages/plugin-rsc/e2e/validate-imports.test.ts
+  s_e1bcc2d149a9b2::t_1936daa9af97b0 1,165-525
+packages/plugin-rsc/src/plugin.ts
+  s_e1bcc2d149a9b2::t_5875209bf86210 1396
+packages/plugin-rsc/src/plugins/validate-import.ts
+  s_e1bcc2d149a9b2::t_7ef9849a120258 4,9-13,77-102,124-128,135-140
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "217bc6ed34a14532162e50436947a553f43a63a6",
+  "prompts": {},
+  "sessions": {
+    "s_e1bcc2d149a9b2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e79e92ef-5e33-415b-bfab-3703f2a9028c",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "James <james@eli.cx>"
+    }
+  }
+}

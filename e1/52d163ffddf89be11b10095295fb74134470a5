@@ -1,0 +1,117 @@
+packages/plugin-react-swc/playground/base-path/package.json
+  s_0a48d9cf4d668a::t_b6c1e1aac62f97 11-12
+packages/plugin-react-swc/playground/bundled-dev/package.json
+  s_0a48d9cf4d668a::t_a612b06fc77bde 11-12
+packages/plugin-react-swc/playground/class-components/package.json
+  s_0a48d9cf4d668a::t_2ec7bedb9883af 11-12
+packages/plugin-react-swc/playground/decorators/package.json
+  s_0a48d9cf4d668a::t_2c3e5640f9e466 11-12
+packages/plugin-react-swc/playground/emotion-plugin/package.json
+  s_0a48d9cf4d668a::t_6b67cd525cfba0 13-14
+packages/plugin-react-swc/playground/emotion/package.json
+  s_0a48d9cf4d668a::t_7072c263aa1738 13-14
+packages/plugin-react-swc/playground/hmr/package.json
+  s_0a48d9cf4d668a::t_bce5360e29f06a 11-12
+packages/plugin-react-swc/playground/mdx/package.json
+  s_0a48d9cf4d668a::t_36e2a2d6cf1a05 11-12
+packages/plugin-react-swc/playground/shadow-export/package.json
+  s_0a48d9cf4d668a::t_d08e3e0a0b34be 11-12
+packages/plugin-react-swc/playground/styled-components/package.json
+  s_0a48d9cf4d668a::t_f076957b2ecafb 11-12
+packages/plugin-react-swc/playground/ts-lib/package.json
+  s_0a48d9cf4d668a::t_bed77d73fa7d40 12-13
+packages/plugin-react-swc/playground/worker/package.json
+  s_0a48d9cf4d668a::t_57a805bfcbe9c5 11-12
+packages/plugin-react/package.json
+  s_0a48d9cf4d668a::t_3e1bf144bc5b81 53-54
+packages/plugin-rsc/examples/action-reachability/package.json
+  s_0a48d9cf4d668a::t_b5a3ec519a52eb 13-14
+packages/plugin-rsc/examples/basic/package.json
+  s_0a48d9cf4d668a::t_67ac020fec4836 15-16
+packages/plugin-rsc/examples/browser-mode/package.json
+  s_0a48d9cf4d668a::t_d750b744f92722 13-14
+packages/plugin-rsc/examples/browser/package.json
+  s_0a48d9cf4d668a::t_8725354f8d56a2 13-14
+packages/plugin-rsc/examples/cache-replay/package.json
+  s_0a48d9cf4d668a::t_bdf15592d41cd5 13-14
+packages/plugin-rsc/examples/client-first/package.json
+  s_0a48d9cf4d668a::t_74f2345cfc9df6 13-14
+packages/plugin-rsc/examples/custom-server-function/package.json
+  s_0a48d9cf4d668a::t_115f9c5df2be57 13-14
+packages/plugin-rsc/examples/no-ssr/package.json
+  s_0a48d9cf4d668a::t_68ba60b752e521 13-14
+packages/plugin-rsc/examples/node-stream/package.json
+  s_0a48d9cf4d668a::t_fb4d4e5e5eaac4 13-14
+packages/plugin-rsc/examples/performance-track/package.json
+  s_0a48d9cf4d668a::t_138cfa3866b7d1 13-14
+packages/plugin-rsc/examples/ppr/package.json
+  s_0a48d9cf4d668a::t_4ce88e8d5126e9 13-14
+packages/plugin-rsc/examples/react-router/package.json
+  s_0a48d9cf4d668a::t_05116a129c657d 16-17
+packages/plugin-rsc/examples/source-map/package.json
+  s_0a48d9cf4d668a::t_e60b2f29975452 13-14
+packages/plugin-rsc/examples/ssg/package.json
+  s_0a48d9cf4d668a::t_21217c022d9381 13-14
+packages/plugin-rsc/examples/ssr-encode-form-action/package.json
+  s_0a48d9cf4d668a::t_53b0fd31d31ffc 13-14
+packages/plugin-rsc/examples/starter-extra/package.json
+  s_0a48d9cf4d668a::t_3b59c053ae8570 17-18
+packages/plugin-rsc/examples/starter/package.json
+  s_0a48d9cf4d668a::t_3a2e23c1ae9311 13-14
+packages/plugin-rsc/examples/use-cache-callable/package.json
+  s_0a48d9cf4d668a::t_5ae8f95b166cb8 12-13
+packages/plugin-rsc/examples/use-cache-persistent/package.json
+  s_0a48d9cf4d668a::t_422791a1e75e05 12-13
+packages/plugin-rsc/examples/use-cache/package.json
+  s_0a48d9cf4d668a::t_fb2068737dacf5 12-13
+packages/plugin-rsc/package.json
+  s_0a48d9cf4d668a::t_51a198c8784f06 64-66
+playground/bundled-dev/package.json
+  s_0a48d9cf4d668a::t_5e0391e573f397 12-13
+playground/class-components/package.json
+  s_0a48d9cf4d668a::t_3f48cfa7d6254f 11-12
+playground/compiler/package.json
+  s_0a48d9cf4d668a::t_92903e600d9def 11-12
+playground/hmr-false/package.json
+  s_0a48d9cf4d668a::t_827e3957497112 12-13
+playground/hook-with-jsx/package.json
+  s_0a48d9cf4d668a::t_c0abb6c6acc801 11-12
+playground/include-node-modules/package.json
+  s_0a48d9cf4d668a::t_e6696c2a4f12a3 11-12
+playground/mdx/package.json
+  s_0a48d9cf4d668a::t_8f37a8c4adede8 11-12
+playground/node-env-production/package.json
+  s_0a48d9cf4d668a::t_8411c1ac44ce12 12-13
+playground/react-classic/package.json
+  s_0a48d9cf4d668a::t_9c1fa21c511cde 12-13
+playground/react-emotion/package.json
+  s_0a48d9cf4d668a::t_cedecc0261b7ef 14-15
+playground/react-env/package.json
+  s_0a48d9cf4d668a::t_8daafb101429fc 12-13
+playground/react-sourcemap/package.json
+  s_0a48d9cf4d668a::t_c7188c6b07e3f8 14-15
+playground/react/package.json
+  s_0a48d9cf4d668a::t_107292f8b020ad 13-14
+playground/ssr-react/package.json
+  s_0a48d9cf4d668a::t_983bf5b4b5c2d3 11-12
+playground/tsconfig-jsx-preserve/package.json
+  s_0a48d9cf4d668a::t_808d05226898f7 12-13
+pnpm-lock.yaml
+  s_0a48d9cf4d668a::t_74ff7089169dfb 88-89,91-92,140-141,143-144,159-160,162-163,178-179,181-182,197-198,200-201,217,220,222-223,225-226,242,245,247-248,250-251,269-270,272-273,288-289,291-292,329-330,332-333,348-349,351-352,355,377,379-380,382-383,400-401,403-404,480-481,483-484,486-487,498-499,501-502,526-527,529-530,549,552,555,558,561,564,567,570,573,590-591,593-594,618-619,621-622,646-647,649-650,674-675,677-678,699-700,702-703,757-758,760-761,782-783,785-786,816-817,819-820,844-845,847-848,872-873,875-876,879,915-916,918-919,943-944,946-947,974-975,977-978,996-997,999-1000,1024-1025,1027-1028,1058-1059,1061-1062,1086-1087,1089-1090,1114-1115,1117-1118,1151-1152,1154-1155,1170-1171,1173-1174,1189-1190,1192-1193,1254-1255,1257-1258,1273-1274,1276-1277,1292-1293,1295-1296,1309,1316-1317,1319-1320,1338-1339,1341-1342,1354-1355,1357-1358,1367-1368,1370-1371,1381,1384,1386-1387,1389-1390,1393,1417-1418,1420-1421,1430-1431,1433-1434,1445-1446,1448-1449,1458-1459,1461-1462,4444-4445,4447,4462-4463,4466-4467,4480-4481,5338,5344,5348,5364,5369,5371,5373,5381,5383,6283,6285,6287,6289,6291,6293,6295,6297,6299,6301,6303,6305,6307,6309,6311,6313,6315,6317-6318,6320,6322-6323,6325,6327,6329,6331-6332,7684,7686,7691,7695,7697,7699,7703-7704,7707,7710-7711,7717,7905,7910,7913,7927,7929,8077,8079
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "e152d163ffddf89be11b10095295fb74134470a5",
+  "prompts": {},
+  "sessions": {
+    "s_0a48d9cf4d668a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2ad02a57-a873-4d24-b2ab-55ad4abad87a",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "James <james@eli.cx>"
+    }
+  }
+}
