@@ -1,0 +1,21 @@
+packages/plugin-rsc/e2e/linked-package.test.ts
+  s_8543ad69f4712e::t_1fc2a72bac9612 186-191
+packages/plugin-rsc/src/plugins/crawl-framework-packages.ts
+  s_8543ad69f4712e::t_0004dd8f18d7c7 33-34,37-43,45,47-53,55-60,63,80-81,89,100-102,108
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "f778b657ee2f9fc0b828a4f41c00cf743452a536",
+  "prompts": {},
+  "sessions": {
+    "s_8543ad69f4712e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "037a8807-1bd1-496a-93cb-42b97e4b92ec",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "James <james@eli.cx>"
+    }
+  }
+}
