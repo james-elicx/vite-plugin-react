@@ -1,0 +1,21 @@
+packages/plugin-rsc/examples/basic/src/framework/entry.rsc.tsx
+  s_58b15b244bf99b::t_5210cf7114ca45 69-70
+packages/plugin-rsc/src/core/rsc.ts
+  s_58b15b244bf99b::t_338cd962dad80a 1,209-226,228-229,234-235,239
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "f9bdcf87ff293e5761795cb17445e7b46154fb7b",
+  "prompts": {},
+  "sessions": {
+    "s_58b15b244bf99b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ab75af1c-7ca7-49da-850f-718547f25774",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "James <james@eli.cx>"
+    }
+  }
+}
