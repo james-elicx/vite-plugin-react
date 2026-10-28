@@ -1,0 +1,37 @@
+packages/plugin-rsc/e2e/basic.test.ts
+  s_c0b8acd09d0a82::t_fc3a330aad308b 821-842
+packages/plugin-rsc/examples/basic/src/routes/root.tsx
+  s_c0b8acd09d0a82::t_7d1fbb5121305b 58,84
+packages/plugin-rsc/examples/basic/src/routes/style-server-repeated/item.css
+  s_cfa6ff0c3870be::t_0ea05e20ca45b9 1-3
+packages/plugin-rsc/examples/basic/src/routes/style-server-repeated/item.tsx
+  s_cfa6ff0c3870be::t_b58bf270484d60 1-12
+packages/plugin-rsc/examples/basic/src/routes/style-server-repeated/server.tsx
+  s_cfa6ff0c3870be::t_41f51778a1bb37 1-16
+packages/plugin-rsc/src/plugin.ts
+  s_c0b8acd09d0a82::t_e15cc4144fc3bc 2748-2767,2769
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "62865e40649eb0b5ad46478be4f81c6b30e7b680",
+  "prompts": {},
+  "sessions": {
+    "s_c0b8acd09d0a82": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "686b9e09-8b02-40a7-af64-d08ca780a26f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "James <james@eli.cx>"
+    },
+    "s_cfa6ff0c3870be": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "205d5570-bcf9-4233-a126-1d3c2a1a9bdd",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "James <james@eli.cx>"
+    }
+  }
+}
